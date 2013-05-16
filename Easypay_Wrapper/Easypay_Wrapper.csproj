@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10A84856-FFAD-4000-A421-EE15FEAA1516}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Easypay_Wrapper</RootNamespace>
+    <AssemblyName>Easypay_Wrapper</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="web.config" />
+    <Content Include="EasypayCreatePaymentReferenceExample.aspx" />
+    <Content Include="EasypayPaymentNotificationExample.aspx" />
+    <Content Include="EasypayRequestPaymentExample.aspx" />
+    <Content Include="EasypayTransactionVerificationExample.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Easypay_wrapper.cs" />
+    <Compile Include="EasypayCreatePaymentReferenceExample.aspx.cs">
+      <DependentUpon>EasypayCreatePaymentReferenceExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EasypayCreatePaymentReferenceExample.aspx.designer.cs">
+      <DependentUpon>EasypayCreatePaymentReferenceExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EasypayPaymentNotificationExample.aspx.cs">
+      <DependentUpon>EasypayPaymentNotificationExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EasypayPaymentNotificationExample.aspx.designer.cs">
+      <DependentUpon>EasypayPaymentNotificationExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EasypayRequestPaymentExample.aspx.cs">
+      <DependentUpon>EasypayRequestPaymentExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EasypayRequestPaymentExample.aspx.designer.cs">
+      <DependentUpon>EasypayRequestPaymentExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EasypayTransactionVerificationExample.aspx.designer.cs">
+      <DependentUpon>EasypayTransactionVerificationExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EasypayTransactionVerificationExample.aspx.cs">
+      <DependentUpon>EasypayTransactionVerificationExample.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>
